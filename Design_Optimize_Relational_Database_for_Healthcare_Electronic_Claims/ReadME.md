@@ -22,15 +22,19 @@ Developed and deployed a highly structured RDBMS on Amazon RDS using DBeaver for
 - Foreign Key Constraints: Established referential integrity across Patients, Claims, Diagnoses, and Insurance Policies.  
 
 - Created Table schemas in **DBeaver** before Data insertion.  
-- Connected to an **AWS RDS (Relational Database Service) instance** using **Google Colab**, carried out data insertion, and verified updates in **DBeaver**.  
+- Connected to an **AWS RDS (Relational Database Service) instance** using **Google Colab**, carried out data insertion, and verified updates in **DBeaver**.
+
+![ERD](https://github.com/LikhithaGuggilla/Data-Management/blob/main/Design_Optimize_Relational_Database_for_Healthcare_Electronic_Claims/Images/ERD.png)  
 
 ---
 
 ### **2️⃣ Database Optimization & Performance Tuning**
 #### **Indexing Strategy**
-- B+ Tree Indexes on high-cardinality attributes (`Patient_ID`, `Claim_ID`).  
+- B+ Tree Indexes on high-cardinality attributes (`InsurancePLanID`,`Patient_ID`, `Claim_ID`).  
 - Bitmap Indexes on low-cardinality columns(`Claim_Status`).  
-- Composite Indexing for multi-column search queries.  
+- Composite Indexing for multi-column search queries.
+
+![Database Optimization](https://github.com/LikhithaGuggilla/Data-Management/blob/main/Design_Optimize_Relational_Database_for_Healthcare_Electronic_Claims/Images/Database%20Optimization.jpg)
 
 #### **Query Execution Optimization**
 - Rewrote nested subqueries into JOIN operations to minimize execution overhead.  
