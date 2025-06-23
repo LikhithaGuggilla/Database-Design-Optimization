@@ -14,7 +14,7 @@ A data management solution aimed at designing a relational database for managing
 1. Modeled business process (swim lane flowchart for claim life cycle using Visio); Identified essential entities, attributes, relationships and cardinality.
 2. Designed Entity-Relationship diagram with 3NF using Draw.io ensuring referential integrity (Primary & Foreign Keys) & data consistency while minimizing redundancy.
 
-![ERD](https://github.com/LikhithaGuggilla/Data-Management/blob/main/Design_Optimize_Relational_Database_for_Healthcare_Electronic_Claims/Images/ERD.png)
+![ERD](https://github.com/LikhithaGuggilla/Database-Management-SQL/blob/main/Images/ERD.png)
 
 **Database Implementation & Optimization**
 1. Deployed MariaDB on Amazon RDS with implementation of table schemas, constraints and indexes; Tested the database functionality and integrity with a small batch data using SQL scripts in DBeaver.
