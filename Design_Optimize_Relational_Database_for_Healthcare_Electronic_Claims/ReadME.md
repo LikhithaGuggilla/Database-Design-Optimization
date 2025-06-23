@@ -1,59 +1,29 @@
-# **Design and Optimize Relational Database for Healthcare Electronic Claims Data Management**
+# **Database Design and Optimization for Healthcare Electronic Claims**
 
-## **Project Overview**
-This project focuses on optimizing electronic claim submission workflows by restructuring relational data storage, implementing database and query optimizations, and reducing claim processing latency. The initiative enhances database normalization, and transaction throughput, benefiting patients, healthcare providers, and insurance companies.
+## **Objective**
 
----
-
-## **Tools/Technologies**
-- Amazon RDS, DBeaver, SQL, Draw.io, Google Colab
+A data management solution aimed at designing a relational database for managing healthcare electronic claims data and improve data management for providers with proper optimization techniques.
 
 ---
+**Data:** Simulated patient and claims data using 'Faker' and 'Random' python module and automated insertion establishing database connectivity from google colab using python script.
 
-## **Technical Implementation**
-Developed and deployed a highly structured RDBMS on Amazon RDS using DBeaver for efficient medical claim processing. A comprehensive Entity-Relationship (ER) Model was implemented with third-normal form (3NF) normalization, ensuring referential integrity while minimizing data redundancy. Additionally, performance tuning strategies, including query indexing, execution plan analysis, and materialized views, resulted in a 50% reduction in query execution time.
-
----
-
-### **1️⃣ Relational Database Development and Data Insertion**
-- Engine: Amazon RDS (MySQL)  
-- Schema Design: Optimized ER Model with normalized fact and dimension tables for claims processing.  
-- Normalization Techniques: Applied 1NF, 2NF, and 3NF to eliminate redundant data storage.  
-- Foreign Key Constraints: Established referential integrity across Patients, Claims, Diagnoses, and Insurance Policies.  
-
-- Created Table schemas in **DBeaver** before Data insertion.  
-- Connected to an **AWS RDS (Relational Database Service) instance** using **Google Colab**, carried out data insertion, and verified updates in **DBeaver**.
-
-![ERD](https://github.com/LikhithaGuggilla/Data-Management/blob/main/Design_Optimize_Relational_Database_for_Healthcare_Electronic_Claims/Images/ERD.png)  
+**Tools/Technologies:** Amazon RDS, DBeaver, SQL, Draw.io
 
 ---
+**Business Process Modeling & ERD**
+1. Modeled business process (swim lane flowchart for claim life cycle using Visio); Identified essential entities, attributes, relationships and cardinality.
+2. Designed Entity-Relationship diagram with 3NF using Draw.io ensuring referential integrity (Primary & Foreign Keys) & data consistency while minimizing redundancy.
 
-### **2️⃣ Database Optimization & Performance Tuning**
-#### **Indexing Strategy**
-- B+ Tree Indexes on high-cardinality attributes (`InsurancePLanID`,`Patient_ID`, `Claim_ID`).  
-- Bitmap Indexes on low-cardinality columns(`Claim_Status`).  
-- Composite Indexing for multi-column search queries.
+![ERD](https://github.com/LikhithaGuggilla/Data-Management/blob/main/Design_Optimize_Relational_Database_for_Healthcare_Electronic_Claims/Images/ERD.png)
 
-![Database Optimization](https://github.com/LikhithaGuggilla/Data-Management/blob/main/Design_Optimize_Relational_Database_for_Healthcare_Electronic_Claims/Images/Database%20Optimization.jpg)
-
-#### **Query Execution Optimization**
-- Rewrote nested subqueries into JOIN operations to minimize execution overhead.  
-- Used Common Table Expressions (CTEs) for complex analytical queries.  
-- Leveraged EXPLAIN ANALYZE to fine-tune SQL queries and remove bottlenecks.  
-
+**Database Implementation & Optimization**
+1. Deployed MariaDB on Amazon RDS with implementation of table schemas, constraints and indexes; Tested the database functionality and integrity with a small batch data using SQL scripts in DBeaver.
+2. Analyzed SQL query response time using execution plan analysis (EXPLAIN ANALYZE) while generating reports like claim status, processing time etc reducing latency by 50% with indexing strategies and query optimization (CTEs, aggregations, views etc).
 ---
 
-### **3️⃣ Claim Status Reporting & Performance Metrics**
-#### **Materialized Views**
-- Precomputed aggregate queries for faster report generation.  
+**Business Impact:**
+Data management and claim processing for healthcare providers can be improved with 50% faster claims-related report generation.
 
-#### **Example Analytical Queries**
-- Claims > $1000 & pending review extracted via indexed queries.  
-- AVG processing time per claim** evaluated using window functions.  
 
-#### **Performance Benchmarking**
-- 50% improvement in optimized query execution time compared to the baseline query.  
-
----
  
 
