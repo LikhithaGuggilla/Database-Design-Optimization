@@ -140,9 +140,9 @@ This is a master lookup table for all possible procedure codes and their descrip
 # 2. SQL Analysis Queries and Indexes
 # These are the queries used for analysis and the indexes created to optimize them.
 
-# Query 1: Get the patient named 'John'
+# Query 1: Analyze the query execution to "Get the patient named 'John'"
 
-    SELECT FirstName, LastName, InsurancePlanID
+    ANALYZE SELECT FirstName, LastName, InsurancePlanID
     FROM PatientInformation pi2
     WHERE FirstName LIKE "John";
 
@@ -150,9 +150,9 @@ This is a master lookup table for all possible procedure codes and their descrip
     CREATE INDEX last_first_Name_idx ON Claim(ClaimID);
 
 
-# Query 2: Find insurance plans with high out-of-pocket maximums
+# Query 2: Analyze the query execution to 'find insurance plans with high out-of-pocket maximums'
 
-    SELECT PayerName, CoverageStartDate, CoverageEndDate, CoPaymentAmount, DeductibleAmount, OutOfPocketMaximum
+    ANALYZE SELECT PayerName, CoverageStartDate, CoverageEndDate, CoPaymentAmount, DeductibleAmount, OutOfPocketMaximum
     FROM InsuranceInformation ii
     JOIN PatientInformation pi2 ON ii.PatientID = pi2.PatientID
     WHERE PayerName IN ("Home PLC", "Cook Group", "SMith Inc", "Reed Group")
@@ -163,9 +163,9 @@ This is a master lookup table for all possible procedure codes and their descrip
     CREATE INDEX PayerName_idx ON InsuranceInformation(PayerName);
 
 
-# Query 3: Find provider encounters that have not been billed
+# Query 3: Analyze the query execution to 'find provider encounters that have not been billed'
 
-    SELECT pi2.ProviderID, pi2.ProviderName, pi2.ProviderType, e.DateOfEncounter, e.TimeOfEncounter, e.BillingStatus
+    ANALYZE SELECT pi2.ProviderID, pi2.ProviderName, pi2.ProviderType, e.DateOfEncounter, e.TimeOfEncounter, e.BillingStatus
     FROM ProviderInfo pi2
     JOIN Encounter e ON e.ProviderID = pi2.ProviderID
     WHERE ProviderName IN ('Abbott Group', 'Acosta, Gomez and Bowen', 'Martin-Zimmerman')
